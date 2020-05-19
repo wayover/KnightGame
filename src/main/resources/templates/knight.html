@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Informacje o rycerzu</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" />
+
+    <script th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div class="container">
+
+
+    <h3>Posiadane złoto: <span th:text="${playerinformation.gold}"/></h3>
+
+
+
+    <table class="table table-striped">
+        <tbody>
+    <tr>
+        <td><img th:src="imie.jpg" height="25" width="25"/></td>
+        <td>Imie:</td>
+        <td><p th:text="${knight.name}"></p></td>
+        <td></td>
+
+    </tr>
+    <tr>
+        <td><img th:src="wiek.jpg" height="25" width="25"/></td>
+        <td>Wiek: </td>
+        <td><p th:text="${knight.age}"></p></td>
+        <td></td>
+
+    </tr>
+    <tr>
+        <td><img th:src="zadanie.jpg" height="25" width="25"/></td>
+        <td>Ilość wykonanych zadań:</td>
+        <td><p th:text="${knight.level}"></p></td>
+        <td></td>
+
+    </tr>
+    <tr>
+        <td><img th:src="akhp.jpg" height="25" width="25"/></td>
+        <td>Aktualne życie: </td>
+        <td><p th:text="${knight.hp}"></p></td>
+        <td><a class="btn btn-primary btn-sm" th:href="${'/knight/heal?id='+knight.id}">Wylecz (500złota)</a></td>
+
+    </tr>
+    <tr>
+        <td><img th:src="hp.jpg" height="25" width="25"/></td>
+        <td>Maksymalne życie:</td>
+        <td> <p th:text="${knight.hpmax}"></p></td>
+        <td><a class="btn btn-primary btn-sm" th:href="${'/knight/upmaxhp?id='+knight.id}">Zwiększ życie (600złota)</a></td>
+    </tr>
+    <tr>
+        <td><img th:src="lvl.jpg" height="25" width="25"/></td>
+    <td>Poziom</td>
+        <td><p th:text="${knight.exp}"></p></td>
+        <td><a class="btn btn-primary btn-sm" th:href="${'/knight/upgrade?id='+knight.id}">Ulepsz (1000złota)</a></td>
+
+    </tr>
+        </tbody>
+    </table>
+
+
+    <a class="btn btn-primary btn-sm" href="/knights">Wróć</a>
+
+
+
+
+
+</div>
+</body>
+</html>
